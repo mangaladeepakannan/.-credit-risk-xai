@@ -154,7 +154,8 @@ xai_outputs/lime_explanation_case_5.html
 
 A text summary is also provided in:
 lime_text_outputs.txt
-4. Strategic Plan: 3 Actionable Underwriting Recommendations
+
+✅ 4. Strategic Plan: 3 Actionable Underwriting Recommendations
 
 Based on SHAP global importance patterns and LIME local explanations, the project proposes three actionable strategies for underwriting teams:
 
