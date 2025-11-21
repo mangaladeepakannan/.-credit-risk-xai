@@ -130,7 +130,7 @@ Regulatory compliance alignment (Basel III, Responsible AI guidelines)
 
 The report is included in the repository as:
 
-REPORT_shap_lime_analysis.txt
+lime_explanations.txt
 
 
 ✅ 3. Text Output Containing LIME Explanations (5 Cases)
