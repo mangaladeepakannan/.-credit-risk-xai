@@ -76,37 +76,99 @@ All generated outputs are saved in the folder:
 
 
 ---
+**Expected Deliverables**
 
-## 🚀 How to Run
+1. Python/R Code Implementation (Plain Text)
 
-### **1. Clone the Repository**
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+The repository provides the complete machine learning pipeline in plain Python code, including:
 
-**Install Requirements**
-pip install -r requirements.txt
+Dataset preprocessing
 
-**Run the Project**
-python credit_risk_xai_project.py
+Train/test split
 
-**📄 File Structure**
+LightGBM model training
 
-├── credit_risk_xai_project.py       # Main pipeline
-├── README.md                        # Project documentation
-├── requirements.txt                 # Dependencies
-├── credit_risk_dataset.csv          # Dataset (user-supplied)
-└── xai_outputs/                     # All SHAP & LIME outputs
+Optuna hyperparameter tuning
 
----
-**🏁 Final Notes**
+SHAP global & local explainability
 
-If you want, I can also generate:
+LIME per-instance explainability
 
-✅ `requirements.txt`  
-✅ GitHub-style project badges  
-✅ A short project abstract  
-✅ A PDF version of the README  
-✅ A colab-ready notebook version  
+Saving outputs (plots, HTML explanations, model artifacts)
 
-Just tell me!
+The full implementation is located in:
+credit_risk_project.ipynb
+
+This script can be executed directly to reproduce all results.
+✅ 2. Text-Based Report (≤1000 Words)
+
+A clearly written analytical report summarizing:
+
+Model Performance
+
+ROC–AUC
+
+F1-score
+
+Classification report
+
+Misclassification patterns
+
+Interpretation of feature importance
+
+SHAP vs. LIME Comparative Analysis
+
+Strengths of SHAP for global interpretability
+
+Strengths of LIME for case-level decision understanding
+
+Consistencies and discrepancies between both explainability frameworks
+
+Fairness & bias implications related to applicant subgroups
+
+Regulatory compliance alignment (Basel III, Responsible AI guidelines)
+
+The report is included in the repository as:
+
+REPORT_shap_lime_analysis.txt
+
+
+✅ 3. Text Output Containing LIME Explanations (5 Cases)
+
+The project generates LIME explanations for:
+
+2 high-confidence approvals
+
+2 high-confidence denials
+
+1 borderline case
+
+Each explanation includes the top contributing features and their directional effect on the prediction.
+
+Saved as:
+xai_outputs/lime_explanation_case_1.html
+xai_outputs/lime_explanation_case_2.html
+xai_outputs/lime_explanation_case_3.html
+xai_outputs/lime_explanation_case_4.html
+xai_outputs/lime_explanation_case_5.html
+
+A text summary is also provided in:
+lime_text_outputs.txt
+4. Strategic Plan: 3 Actionable Underwriting Recommendations
+
+Based on SHAP global importance patterns and LIME local explanations, the project proposes three actionable strategies for underwriting teams:
+
+1. Prioritize Transparency in High-Risk Decisions
+
+Use LIME and SHAP local explanations to justify borderline or denied applications, ensuring regulatory-compliant decision records.
+
+2. Monitor Key Risk Drivers Identified by SHAP
+
+Features with consistently high SHAP contributions (e.g., delinquency history, DTI ratio) should be integrated into enhanced risk monitoring and customer segmentation strategies.
+
+3. Implement Fairness Checks on Sensitive Attributes
+
+Use SHAP dependence plots to detect whether income, employment status, or other socio-economic features introduce potential bias across demographic groups.
+
+These recommendations are listed in:
+strategic_underwriting_recommendations.txt
