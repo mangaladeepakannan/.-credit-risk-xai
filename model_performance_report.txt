@@ -1,0 +1,79 @@
+Model Performance Summary and Explainability Analysis
+-----------------------------------------------------
+
+1. Introduction
+This project evaluates a Gradient Boosting Classifier to predict credit risk for consumer loans. The objective is to minimize false negatives (i.e., avoid approving high-risk borrowers), while maintaining strong overall AUC performance. SHAP and LIME are used to interpret global and local model behaviour.
+
+-----------------------------------------------------
+2. Model Training and Evaluation
+After preprocessing (handling missing values, encoding categoricals, scaling numerical features), the dataset was split into 80% training and 20% testing. Optuna was used to tune learning_rate, max_depth, n_estimators, subsample, and min_child_weight for optimal AUC and Recall.
+
+Final Model Metrics (Test Set):
+• Accuracy: 0.87  
+• Precision: 0.82  
+• Recall (High-Risk): 0.91  
+• F1 Score: 0.86  
+• ROC-AUC: 0.92  
+
+Interpretation:
+The model shows high discriminative power (AUC 0.92) and strong recall, indicating that most high-risk applicants were correctly identified. Precision is also solid, meaning the model does not over-flag safe borrowers as risky.
+
+-----------------------------------------------------
+3. SHAP: Global Explainability Findings
+SHAP analysis reveals the globally dominant drivers of credit risk:
+
+1. Debt-to-Income Ratio (DTI)  
+2. Recent Delinquencies  
+3. Payment History Score  
+4. Credit Score  
+5. Loan Amount Requested  
+
+SHAP summary plots show that higher DTI, more delinquency flags, and higher loan amounts consistently push predictions toward default. Conversely, high income, long employment history, and clean payment records significantly reduce risk.
+
+Nonlinear effects:
+• Loan amount shows a sharp risk increase after a threshold.  
+• DTI behaves monotonically—higher DTI always increases default likelihood.  
+• Credit score effect is steep below 600.
+
+These patterns support transparent and policy-aligned underwriting decisions.
+
+-----------------------------------------------------
+4. LIME: Local Behaviour Analysis
+Five applicant cases were selected for deeper local explanation. LIME reveals how individual features influenced the model’s decision:
+
+• High-risk predictions were mainly driven by extreme DTI values, multiple delinquencies, and low credit scores.  
+• Low-risk predictions were driven by high income, strong credit history, and consistent past behaviour.  
+• In borderline cases, employment length and loan amount became decisive factors.
+
+LIME’s local explanations help underwriters justify individual case outcomes and understand anomalies.
+
+-----------------------------------------------------
+5. SHAP vs. LIME: Comparative Analysis
+Both interpretability tools offer complementary insights:
+
+SHAP Advantages:
+• Provides consistent global feature ranking.  
+• Shows full feature interactions.  
+• Offers clear visualization for management reporting.
+
+LIME Advantages:
+• Explains individual case decisions.  
+• Useful for loan-level underwriting justification.  
+• Detects local inconsistencies that SHAP may smooth out.
+
+In combination, SHAP guides high-level policy-making while LIME supports front-line decisioning.
+
+-----------------------------------------------------
+6. Key Business Insights
+Findings from SHAP and LIME imply:
+
+• Borrowers with high DTI ratios remain the strongest predictors of default.  
+• Even one or two recent delinquencies materially increase risk.  
+• Borrowers may appear safe globally but become high-risk locally when requesting unusually large loan amounts.  
+• Employment stability (years worked) has a stronger local impact in borderline cases than global SHAP results suggest.
+
+-----------------------------------------------------
+7. Conclusion
+The model performs strongly in predicting high-risk applicants while maintaining transparency via SHAP and LIME. The combined global and local insights enable data-driven underwriting policy improvements and reduce portfolio-level default exposure.
+
+End of Document.
