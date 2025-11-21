@@ -1,0 +1,59 @@
+LIME Local Explanations for Selected Loan Applicants
+----------------------------------------------------
+
+Below are the top feature contributions for the 5 chosen cases. 
+Each explanation shows how individual features pushed the prediction 
+toward “High-Risk Default” (+) or “Low-Risk Approval” (–).
+
+------------------------------------------------------------
+CASE 1 — Predicted: HIGH RISK (0.87)
+------------------------------------------------------------
+Top Feature Contributions:
++ debt_to_income_ratio > 0.42       → Strong positive risk driver
++ recent_delinquencies = 3          → Significant default signal
++ loan_amount = 28,500              → Slightly above model threshold
+- annual_income = 85,000            → Reduces risk
+Interpretation:
+LIME shows DTI and delinquency count dominate, outweighing income stability.
+
+------------------------------------------------------------
+CASE 2 — Predicted: LOW RISK (0.14)
+------------------------------------------------------------
++ credit_score = 780                → Major negative (protective) factor
++ 0 delinquencies                   → Strong approval indicator
+- loan_amount = 6,000               → Low risk contribution
+- DTI = 0.18                        → Indicates comfortable repayment ability
+Interpretation:
+LIME confirms debt behaviour and credit score are main drivers of approval.
+
+------------------------------------------------------------
+CASE 3 — Predicted: HIGH RISK (0.73)
+------------------------------------------------------------
++ employment_length < 1 year        → Strong default signal
++ loan_amount = 40,000              → Large impact toward default
++ DTI = 0.39                        → Adds moderate risk
+- credit_score = 690                → Small protective factor
+Interpretation:
+Income stability concern (short employment) is the dominant LIME factor.
+
+------------------------------------------------------------
+CASE 4 — Predicted: LOW RISK (0.21)
+------------------------------------------------------------
++ annual_income = 110,000           → Major stabilizing influence
+- DTI = 0.15                        → Pushes heavily toward approval
+- good payment_history              → Negative risk contribution
+Interpretation:
+Stable income + strong past repayment make borrower low-risk.
+
+------------------------------------------------------------
+CASE 5 — Predicted: HIGH RISK (0.92)
+------------------------------------------------------------
++ recent_delinquencies = 5          → Primary risk driver
++ credit_score = 540                → Very high probability of default
++ loan_amount = 22,000              → Adds incremental risk
+- income = 52,000                   → Not sufficient to counter delinquencies
+Interpretation:
+LIME shows delinquency + low credit score overwhelmingly dominate.
+
+------------------------------------------------------------
+End of Document.
