@@ -74,3 +74,34 @@ Includes loan information, borrower demographics, and financial indicators.
 ### **5. Deliverables**
 All generated outputs are saved in the folder:
 
+
+---
+
+## 🚀 How to Run
+
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+
+pip install -r requirements.txt
+
+python credit_risk_xai_project.py
+
+├── credit_risk_xai_project.py       # Main pipeline
+├── README.md                        # Project documentation
+├── requirements.txt                 # Dependencies
+├── credit_risk_dataset.csv          # Dataset (user-supplied)
+└── xai_outputs/                     # All SHAP & LIME outputs
+
+---
+
+If you want, I can also generate:
+
+✅ `requirements.txt`  
+✅ GitHub-style project badges  
+✅ A short project abstract  
+✅ A PDF version of the README  
+✅ A colab-ready notebook version  
+
+Just tell me!
