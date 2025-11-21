@@ -1,0 +1,10 @@
+jupyter notebook
+pandas
+numpy
+scikit-learn
+lightgbm
+optuna
+shap
+lime
+matplotlib
+joblib
