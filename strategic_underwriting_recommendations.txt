@@ -1,0 +1,50 @@
+Strategic Underwriting Recommendations
+Derived from SHAP & LIME Model Interpretability Analysis
+---------------------------------------------------------
+
+Based on the combined insights from the Gradient Boosting Credit Risk Model, SHAP global importance patterns, LIME local explanations, and case-level driver analysis, the following three underwriting recommendations are proposed:
+
+---------------------------------------------------------
+1. Strengthen Income–to–Debt Screening Thresholds
+---------------------------------------------------------
+• SHAP analysis consistently ranked ‘debt_to_income_ratio’ and ‘annual_income’ as two of the strongest predictors of loan default.  
+• LIME case studies confirmed that borrowers with borderline or high DTI ratios contributed strongly to “High-Risk” predictions, even in cases with strong credit scores.  
+• Recommendation:
+  - Introduce tighter DTI cutoffs or a tiered approval policy (e.g., automatic manual review for DTI > 38%).  
+  - Require additional verification for income stability (salary slips, tax records, employer tenure).  
+  - Offer risk-adjusted interest rates for mid-DTI applicants instead of binary approval/rejection.
+
+---------------------------------------------------------
+2. Implement Risk-Based Loan Amount Adjustments
+---------------------------------------------------------
+• SHAP dependence plots showed clear nonlinear risk escalation for loan_amount beyond the median range.  
+• In multiple LIME explanations, even applicants with good credit histories became “High-Risk” when the requested loan_amount was disproportionately high relative to income and payment_history.  
+• Recommendation:
+  - Introduce maximum permissible loan caps linked to applicant income bands.  
+  - Require collateral or co-signer for loan_amount exceeding the model’s identified risk threshold.  
+  - Automate alerts for underwriters when high loan requests align with low–moderate credit quality.
+
+---------------------------------------------------------
+3. Expand Behavioural Risk Monitoring for Borrowers with Late Payment Indicators
+---------------------------------------------------------
+• SHAP global ranking highlighted ‘payment_history’ and ‘delinquency_flags’ as primary drivers of default prediction.  
+• LIME analysis across five selected cases showed that even a small number of recent late payments increased predicted probability of default substantially.  
+• Recommendation:
+  - Establish behavioural risk tiers:  
+    • Tier 1 (No delinquencies): Standard processing  
+    • Tier 2 (1–2 late payments): Additional income verification  
+    • Tier 3 (3+ delinquencies): Mandatory manual underwriting  
+  - Offer structured repayment plans or reduced loan tenure for borderline cases.  
+  - Use alternative data (utility payments, rental history) to better validate borrower discipline.
+
+---------------------------------------------------------
+Summary
+---------------------------------------------------------
+These three recommendations—tightening DTI rules, adjusting loan amounts based on risk, and enhancing monitoring for applicants with payment issues—directly reflect the factors SHAP identified as globally influential and the red flags flagged by LIME during local prediction analysis.
+
+Implementing these guidelines will help:
+• Reduce false approvals (high-risk borrowers slipping through).  
+• Improve portfolio-level stability.  
+• Enhance fairness using transparent, interpretable ML-driven underwriting rules.  
+
+End of Document.
