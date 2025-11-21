@@ -84,9 +84,13 @@ All generated outputs are saved in the folder:
 git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
 
+**Install Requirements**
 pip install -r requirements.txt
 
+**Run the Project**
 python credit_risk_xai_project.py
+
+**📄 File Structure**
 
 ├── credit_risk_xai_project.py       # Main pipeline
 ├── README.md                        # Project documentation
@@ -95,6 +99,7 @@ python credit_risk_xai_project.py
 └── xai_outputs/                     # All SHAP & LIME outputs
 
 ---
+**🏁 Final Notes**
 
 If you want, I can also generate:
 
