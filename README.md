@@ -78,7 +78,7 @@ All generated outputs are saved in the folder:
 ---
 **Expected Deliverables**
 
-1. Python/R Code Implementation (Plain Text)
+✅ 1. Python/R Code Implementation (Plain Text)
 
 The repository provides the complete machine learning pipeline in plain Python code, including:
 
